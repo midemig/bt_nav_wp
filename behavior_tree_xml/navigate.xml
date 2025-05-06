@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="3"
+      main_tree_to_execute="BehaviorTree">
+  <BehaviorTree ID="BehaviorTree">
+    <Repeat num_cycles="1">
+      <Sequence>
+        <GetWaypoint x="5"
+                     y="0"
+                     yaw="1.57"
+                     waypoint="{wp}"/>
+        <Move goal="{wp}"/>
+      </Sequence>
+    </Repeat>
+  </BehaviorTree>
+
+  <!-- Description of Node Models (used by Groot) -->
+  <TreeNodesModel>
+    <Action ID="GetWaypoint">
+      <input_port name="x"
+                  default="1.0"/>
+      <input_port name="y"
+                  default="1.0"/>
+      <input_port name="yaw"
+                  default="1.0"/>
+      <output_port name="waypoint"/>
+    </Action>
+    <Action ID="Move">
+      <input_port name="goal"/>
+    </Action>
+  </TreeNodesModel>
+
+</root>
